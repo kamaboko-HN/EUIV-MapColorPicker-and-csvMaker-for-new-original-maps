@@ -23,12 +23,12 @@ class Application(tk.Frame):
         mcpadm = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label='M', menu=mcpadm)
         #mcpadm.add_command(label='仕様')
-        mcpadm.add_command(label='終了', command=self.Exit)
+        mcpadm.add_command(label='Quit', command=self.Exit)
         
         definition_menu = tk.Menu(menubar, tearoff=0)
         menubar.add_cascade(label='Def', menu=definition_menu)
-        definition_menu.add_command(label='開く', command=self.LoadFromMakedDefinition)
-        definition_menu.add_command(label='保存', command=self.SaveToDefinition)
+        definition_menu.add_command(label='open', command=self.LoadFromMakedDefinition)
+        definition_menu.add_command(label='save', command=self.SaveToDefinition)
         
         MasterFrame.pack(anchor=tk.W)
         
@@ -211,7 +211,7 @@ class Application(tk.Frame):
         
         check_made = defins_2[0].split(";")
         if self.definList.size() > 0:
-            ans = mb.askokcancel("確認", "生成済みのdefintionsリストがあります。上書きしますか？")
+            ans = mb.askokcancel("確認 : Check", "生成済みのdefintionsリストがあります。上書きしますか？\nThere is a list of defintions already generated. Do you want to overwrite it?")
         elif self.definList.size() == 0:
             ans = True
             if ans == True:
@@ -253,7 +253,7 @@ class Application(tk.Frame):
                     
                     
                 else:
-                    mb.showerror("エラー", "このファイルは当ソフトで作られたものではない可能性があるため開くことができません。")
+                    mb.showerror(" エラー : ERROR", "このファイルは当ソフトで作られたものではない可能性があるため開くことができません。\nThis file cannot be opened because it may not have been created by our software.")
         
         
         
