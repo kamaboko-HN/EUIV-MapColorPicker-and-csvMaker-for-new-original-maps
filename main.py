@@ -174,7 +174,7 @@ class Application(tk.Frame):
         
     def SetList(self, RGB, type):
         #1;128;34;64;Stockholm;x
-        ProvinceDef = str(self.TotalUsed_var) + ";" + str(RGB[0]) + ";" + str(RGB[1]) + ";" + str(RGB[2]) + ";" + "No." + str(self.TotalUsed_var) + ";" + type
+        ProvinceDef = str(self.TotalUsed_var) + ";" + str(RGB[0]) + ";" + str(RGB[1]) + ";" + str(RGB[2]) + ";" + "No." + str(self.TotalUsed_var) + "_#" + self.RGBtoHex(RGB) + ";" + type
         
         self.definList.insert(tk.END, ProvinceDef)
         
